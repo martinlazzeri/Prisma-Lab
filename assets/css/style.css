@@ -31,3 +31,8 @@
   text-align: center;
   width: auto;
 }
+
+.modal-header{
+  background-color: #474544;
+  color: white;
+}
