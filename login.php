@@ -1,5 +1,5 @@
 <?php
-//initilize the page
+//initilize the pageaa
 require_once("inc/init.php");
 require_once("inc/config.ui.php");
 
