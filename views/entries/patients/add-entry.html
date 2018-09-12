@@ -11,7 +11,7 @@
 					<div class="jarviswidget-editbox">
 					</div>
 					<div class="widget-body">
-						<form id="form-addDoctors" class="form-horizontal">
+						<form id="form-addEntries" class="form-horizontal">
 							<fieldset>
 								<div class="form-group row m-b-15">					
 									<label class="col-md-4 control-label">Buscar Paciente</label>
@@ -27,6 +27,7 @@
 									<div class="col-md-4">
 										<input class="form-control ui-autocomplete-input" placeholder="Matricula - Nombre, Apellido" type="text" id="search-doctor" autocomplete="off">
 									</div>
+									<input type="button" class="btn btn-sm btn-primary m-r-5 form-control" value="Nuevo médico" data-toggle="modal" data-target="#modalDoctor" id="btn-addnewDoctor">
 								</div>
 							</fieldset>				
 							<fieldset>
@@ -64,7 +65,7 @@
 	        	<h4 class="modal-title">Alta de Pacientes</h4>
 	      	</div>
 	      	<div class="modal-body">
-						<form id="form-addPatients" class="form-horizontal">
+						<form id="form-addModalPatients" class="form-horizontal">
 							<fieldset>
 								<div class="form-group row m-b-15">
 									<label class="col-md-4 control-label">D.N.I. <span class="text-danger">*</span></label>
@@ -129,3 +130,65 @@
     </div>
 </div>
 <script src="assets/js/entries/patients/add-patient.js"></script>
+
+<div class="modal fade" id="modalDoctor">
+	<div class="modal-dialog">
+	    <div class="modal-content">
+    	  	<div class="modal-header">
+        		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+	        	<h4 class="modal-title">Alta de Médicos</h4>
+	      	</div>
+	      	<div class="modal-body">
+						<form id="form-addModalDoctors" class="form-horizontal">
+							<fieldset>
+								<div class="form-group row m-b-15">
+									<label class="col-md-4 control-label">Matrícula <span class="text-danger">*</span></label>
+									<div class="col-md-4">
+										<input id="enrollment" onblur="CheckDoctorInputs('enrollment', 'enrollment');" class="form-control" placeholder="XXXXXX" type="number" maxlength="6" min="1" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57" autofocus required/>
+										<div class="error-message error-enrollment"></div>
+									</div>
+								</div>
+								<div class="form-group row m-b-15">
+									<label class="col-md-4 control-label" for="typeEnrollment">Tipo de Matrícula <span class="text-danger">*</span></label>
+									<div class="col-md-4">			
+										<select class="form-control" id="typeEnrollment" required>
+											<option selected="" disabled="">Seleccione una opción</option>
+											<option value="0">Provincial</option>
+											<option value="1">Nacional</option>
+										</select> 
+									</div>
+								</div>
+								<div class="form-group row m-b-15">
+									<label class="col-md-4 control-label">Nombre <span class="text-danger">*</span></label>
+									<div class="col-md-4">	
+										<input id="doctor-firstname" class="form-control" placeholder="Nombre del médico" type="text" required>
+									</div>
+								</div>
+								<div class="form-group row m-b-15">
+									<label class="col-md-4 control-label">Apellido <span class="text-danger">*</span></label>
+									<div class="col-md-4">	
+										<input id="doctor-lastname" class="form-control" placeholder="Apellido del médico" type="text" required>
+									</div>
+								</div>
+								<div class="form-group row m-b-15">
+									<label class="col-md-4 control-label">Domicilio</label>
+									<div class="col-md-4">	
+										<input id="doctor-address" class="form-control" placeholder="Domicilio" type="text">
+									</div>
+								</div>
+								<div class="form-group row m-b-15">
+									<label class="col-md-4 control-label">Teléfono</label>
+									<div class="col-md-4">	
+										<input id="doctor-phone" class="form-control" placeholder="Teléfono" type="number" maxlength="10" min="1" max="9999999999" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"/>
+									</div>
+								</div>
+							</fieldset>									
+						</form>
+        	</div>
+      		<div class="modal-footer text-center">	      			
+				<button class="btn btn-primary" onclick="AddModalDoctor();" type="button" id="btn-addPatient">Ingresar Médico</button>
+			</div>
+    	</div>
+    </div>
+</div>
+<script src="assets/js/doctors/add-doctor.js"></script>

@@ -137,12 +137,16 @@ function CleanDoctorForm($name){
 	} else if($name == 'editDoctor'){
 		$("#form-editDoctors").get(0).reset();
 		$("#form-editDoctors :input").prop("disabled", true); 
+		$("#search-doctor").prop("disabled", false);
+	  $("#search-doctor").focus();
 	} else if($name == 'removeDoctor'){
 		$("#form-removeDoctors").get(0).reset();
-	} 
-
-	$("#search-doctor").prop("disabled", false);
-	$("#search-doctor").focus();
+		$("#search-doctor").prop("disabled", false);
+	  $("#search-doctor").focus();
+	} else if ($name == 'addModalDoctor'){
+		$("#form-addModalDoctors").get(0).reset();
+		$('#modalDoctor').modal('hide');
+	}
 }
 
 function CheckDoctorInputs($checkName, $name){
@@ -279,17 +283,15 @@ function GetWelfareById($id){
 
 //Patients
 function CleanPatientForm($name){
-	if($name == 'addPatient'){
-		$("#form-addPatients").get(0).reset();
-		$('#search-patient').focus();
+	if($name == 'addModalPatient'){
+		$("#form-addModalPatients").get(0).reset();
+		$('#modalPatient').modal('hide');
 	} else if($name == 'editPatient'){
 		$("#form-editPatients").get(0).reset();
 		$("#form-editPatients :input").prop("disabled", true); 
 	} else if($name == 'removePatient'){
 		$("#form-removePatients").get(0).reset();
 	} 
-
-$('#modalPatient').modal('hide');
 }
 
 function CheckPatientInputs($checkName, $name){

@@ -2,8 +2,14 @@ $(document).ready(function(){
   $("#search-patient").focus();
 });
 
+$('#btn-addPatient').on('click', function(){
+  setTimeout(function(){ $('#dni').focus(); }, 180);
+});
+
 function AddPatient(){
-  $('#search-patient').val($('#dni').val()+" - "+ $('#firstname').val()+" "+$('#lastname').val());
+  var dni = $('#dni').val();
+  var firstname = $('#firstname').val();
+  var lastname = $('#lastname').val();
 
   $.ajax({
     type: 'POST',
@@ -27,8 +33,11 @@ function AddPatient(){
           timeout: 5000,
           icon : "fa fa-check"          
         });
-        CleanPatientForm('addPatient');
+
+        CleanPatientForm('addModalPatient');
         $.cookie('patientId', response.Data);
+        $('#search-patient').val(dni+" - "+ firstname+" "+lastname);
+        setTimeout(function(){ $('#search-doctor').focus(); }, 500);
     },
     error: function(error){
       if(error.status == 400){

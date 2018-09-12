@@ -59,7 +59,7 @@ class PatientService extends BaseService implements IPatientService{
    * @return mixed (int or null)
   */
 	public function Add($patient, $userId){
- 		if (!$this->patientRepository->DNIExists($patient['dni']) && $this->IsValidFormat($patient['email'])){
+ 		if (!$this->patientRepository->DNIExists($patient['dni']) && ($this->IsValidFormat($patient['email']) || $patient['email'] == '')){
 			$userName = $this->userRepository->GetUsernameById($userId);
 	  	$username = (array) json_decode($userName);	
 	  	$this->auditRepository->Add('Patients - Add', $username['username']);
