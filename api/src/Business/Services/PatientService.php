@@ -59,7 +59,7 @@ class PatientService extends BaseService implements IPatientService{
    * @return mixed (int or null)
   */
 	public function Add($patient, $userId){
- 		if (!$this->patientRepository->DNIExists($patient['dni'])){
+ 		if (!$this->patientRepository->DNIExists($patient['dni']) && $this->IsValidFormat($patient['email'])){
 			$userName = $this->userRepository->GetUsernameById($userId);
 	  	$username = (array) json_decode($userName);	
 	  	$this->auditRepository->Add('Patients - Add', $username['username']);
@@ -103,7 +103,7 @@ class PatientService extends BaseService implements IPatientService{
   	$old = $this->patientRepository->GetById($id);
   	$oldPatient = (array) json_decode($old);
   	
-		if (!is_null($old)){
+		if (!is_null($old) && $this->IsValidFormat($patient['email'])){
 
 			$userName = $this->userRepository->GetUsernameById($userId);
 		  $username = (array) json_decode($userName);
@@ -240,5 +240,20 @@ class PatientService extends BaseService implements IPatientService{
 		} else {
  		  return null;
 		}
+	}
+
+  /** 
+	 * Checks format email
+	 *
+	 * @param string $email
+	 *
+	 * @return bool
+	*/
+	private function IsValidFormat($email){
+		if (!filter_var(substr($email, 0, 100), FILTER_VALIDATE_EMAIL)){
+	    return false;
+	  }
+	    
+		return true;
 	}
 }

@@ -39,6 +39,16 @@ function AddPatient(){
           timeout: 8000,
           icon : "fa fa-warning shake animated"
         });
+      } 
+      if(error.status == 409){
+        $.bigBox({
+            title : "Error",
+            content : "El email es incorrecto. Verifique el formato de email que ingresó.",
+            color : "#C46A69",
+            timeout: 8000,
+            icon : "fa fa-warning shake animated"
+        });
+        $('#email').focus();
       }
     }
   });
