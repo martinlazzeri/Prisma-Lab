@@ -1,21 +1,3 @@
-/*
- * Spinners
- */
-$("#spinner").spinner();
-$("#spinner-decimal").spinner({
-	step : 0.01,
-	numberFormat : "n"
-});
-
-$("#spinner-currency").spinner({
-	min : 5,
-	max : 2500,
-	step : 25,
-	start : 1000,
-	numberFormat : "C"
-});
-
-
 var mobile = {
   Android: function() {
     return navigator.userAgent.match(/Android/i);

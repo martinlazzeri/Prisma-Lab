@@ -22,6 +22,7 @@ $("#search-patient").autocomplete({
 	},
 	minLength : 2,
 	select : function(event, ui) {
+		$('#search-patient').removeClass('ui-autocomplete-loading');
 		$.cookie('patientId', ui.item.value2);
 	}
 });
@@ -50,6 +51,7 @@ $("#search-welfare").autocomplete({
 	},
 	minLength : 2,
 	select : function(event, ui) {
+		$('#search-welfare').removeClass('ui-autocomplete-loading');
 		$.cookie('welfareId', ui.item.value2);
 	}
 });
@@ -78,6 +80,7 @@ $("#search-doctor").autocomplete({
 	},
 	minLength : 2,
 	select : function(event, ui) {
+		$('#search-doctor').removeClass('ui-autocomplete-loading');
 		$.cookie('doctorId', ui.item.value2);
 	}
 });
