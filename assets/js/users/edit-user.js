@@ -25,6 +25,7 @@ $("#search-user").autocomplete({
 	},
 	minLength : 2,
 	select : function(event, ui) {
+		$('#search-user').removeClass('ui-autocomplete-loading');
 		GetUserById(ui.item.value);
 	}
 });

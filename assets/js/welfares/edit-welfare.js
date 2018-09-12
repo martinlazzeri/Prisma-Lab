@@ -25,6 +25,7 @@ $("#search-welfare").autocomplete({
 	},
 	minLength : 2,
 	select : function(event, ui) {
+		$('#search-welfare').removeClass('ui-autocomplete-loading');
 		GetWelfareById(ui.item.value);
 	}
 });

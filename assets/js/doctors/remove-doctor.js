@@ -25,6 +25,7 @@ $("#search-doctor").autocomplete({
 	},
 	minLength : 2,
 	select : function(event, ui) {
+		$('#search-doctor').removeClass('ui-autocomplete-loading');
 		GetDoctorById(ui.item.value);
 	}
 });
