@@ -208,12 +208,16 @@ function CleanWelfareForm($name){
 	} else if($name == 'editWelfare'){
 		$("#form-editWelfares").get(0).reset();
 		$("#form-editWelfares :input").prop("disabled", true); 
+		$("#search-welfare").prop("disabled", false);
+		$("#search-welfare").focus();
 	} else if($name == 'removeWelfare'){
 		$("#form-removeWelfares").get(0).reset();
-	} 
-
-	$("#search-welfare").prop("disabled", false);
-	$("#search-welfare").focus();
+		$("#search-welfare").prop("disabled", false);
+		$("#search-welfare").focus();
+	} else if ($name == 'addModalWelfare'){
+		$("#form-addModalWelfares").get(0).reset();
+		$('#modalWelfare').modal('hide');
+	}
 }
 
 function CheckWelfareInputs($checkName, $name){
