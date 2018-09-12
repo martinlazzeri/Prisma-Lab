@@ -1,0 +1,197 @@
+<section id="widget-grid" class="">
+		<div class="row">
+			<!-- NEW WIDGET START -->
+		<div class="col-sm-3 col-md-2 col-lg-2"></div>
+		<article class="col-sm-6 col-md-8 col-lg-8">
+				<!-- Widget ID (each widget will need unique ID)-->
+				<div class="jarviswidget" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false">
+					<header>						
+						<span class="widget-icon"> <i class="fa fa-times"></i> </span>	
+						<h2>Borrado de Mutual</h2>
+					</header>
+					<!-- widget div-->
+					<div>
+						<!-- end widget edit box -->
+						<!-- widget content -->
+						<div class="widget-body">
+						<form class="form-horizontal" id="form-removeWelfares">
+							<fieldset>			
+								<div class="form-group">					
+									<label class="col-md-4 control-label">Buscar Obra Social</label>
+									<div class="col-md-4">
+										<input class="form-control ui-autocomplete-input" placeholder="Codigo - Nombre" type="text" id="search-welfare" autocomplete="off">
+									</div>
+								</div>
+								<div class="form-group row m-b-15">
+									<label class="col-md-4 control-label">Código<span class="text-danger">*</span></label>
+									<div class="col-md-2">
+										<input id="code" class="form-control" placeholder="XXXX" type="text" maxlength="4" required disabled>
+										<div class="error-message error-code"></div>
+									</div>
+								</div>
+								<div class="form-group row m-b-15">
+									<label class="col-md-4 control-label">Nombre<span class="text-danger">*</span></label>
+									<div class="col-md-4">
+										<input id="name" class="form-control" placeholder="Nombre de la obra social" type="text" required disabled>
+										<div class="error-message error-name"></div>
+									</div>
+								</div>
+								<div class="form-group row m-b-15">
+									<label class="col-md-4 control-label" for="coveragePercentage">Porcentaje de Cobertura<span class="text-danger">*</span></label>
+									<div class="col-md-4">
+										<input type="number" class="form-control" id="coveragePercentage" maxlength="3" placeholder="% de cobertura" disabled>
+									</div>
+								</div>
+								<div class="form-group row m-b-15">
+									<label class="col-md-4 control-label">Importe Boleta Mínima<span class="text-danger">*</span></label>
+									<div class="col-md-4">
+										<input id="minimumAmount" class="form-control" placeholder="0.00" type="text" required disabled>
+									</div>
+								</div>
+								<div class="form-group row m-b-15">
+									<label class="col-md-4 control-label" for="payAtHome">Domicilio<span class="text-danger">*</span></label>
+									<div class="col-md-4">			
+										<select class="form-control" id="payAtHome" required disabled>
+											<option selected="" disabled="">Seleccione una opción</option>
+											<option value="1">Si</option>
+											<option value="0">No</option>
+										</select> 
+									</div>
+								</div>
+								<div class="form-group row m-b-15">
+									<label class="col-md-4 control-label" for="pmo">¿P.M.O.?<span class="text-danger">*</span></label>
+									<div class="col-md-4">			
+										<select class="form-control" id="pmo" required disabled>
+											<option selected="" disabled="">Seleccione una opción</option>
+											<option value="1">Si</option>
+											<option value="0">No</option>
+										</select> 
+									</div>
+								</div>
+								<div class="form-group row m-b-15">
+									<label class="col-md-4 control-label" for="coinsurance">¿Cobra Coseguro?<span class="text-danger">*</span></label>
+									<div class="col-md-4">			
+										<select class="form-control" id="coinsurance" required disabled>
+											<option selected="" disabled="">Seleccione una opción</option>
+											<option value="1">Si</option>
+											<option value="0">No</option>
+										</select> 
+									</div>
+								</div>
+								<div class="form-group row m-b-15">
+									<label class="col-md-4 control-label" for="serviceAvailable">¿Servicios Cortados?<span class="text-danger">*</span></label>
+									<div class="col-md-4">			
+										<select class="form-control" id="serviceAvailable" required disabled>
+											<option selected="" disabled="">Seleccione una opción</option>
+											<option value="1">Si</option>
+											<option value="0">No</option>
+										</select> 
+									</div>
+								</div>
+								<div class="form-group row m-b-15">
+									<label class="col-md-4 control-label" for="completeNomenclator">¿Nomen. Completo?<span class="text-danger">*</span></label>
+									<div class="col-md-4">			
+										<select class="form-control" id="completeNomenclator" required disabled>
+											<option selected="" disabled="">Seleccione una opción</option>
+											<option value="1">Si</option>
+											<option value="0">No</option>
+										</select> 
+									</div>
+								</div>
+								<div class="form-group row m-b-15">
+									<label class="col-md-4 control-label" for="disposableMaterial">¿Reconoce 677?<span class="text-danger">*</span></label>
+									<div class="col-md-4">			
+										<select class="form-control" id="disposableMaterial" required disabled>
+											<option selected="" disabled="">Seleccione una opción</option>
+											<option value="1">Si</option>
+											<option value="0">No</option>
+										</select> 
+									</div>
+								</div>
+								<div class="form-group row m-b-15">
+									<label class="col-md-4 control-label">% (0 - 100)<span class="text-danger">*</span></label>
+									<div class="col-md-4">
+										<input id="percentage" class="form-control" type="number" min="0" max="100" disabled>										
+									</div>
+								</div>												
+
+							<fieldset>
+								<legend class="text-center">Nomenclador INOS</legend>
+								<div class="row" id="form-inos">
+									<div class="form-group row m-b-15">
+										<label class="col-md-4 control-label" for="inosReducido">¿INOS Reducido?</label>
+										<div class="col-md-4">			
+											<select class="form-control" id="inosReducido" required disabled>
+												<option selected="" disabled="">Seleccione una opción</option>
+												<option value="1">Si</option>
+												<option value="0">No</option>
+											</select> 
+										</div>
+									</div>
+								</div>
+								<legend></legend>
+
+								<legend class="text-center">Nomenclador FABA</legend>								
+								<div class="row" id="form-faba">
+									<div class="form-group row m-b-15">
+										<label class="col-md-4 control-label">Valor Nivel A</label>
+										<div class="col-md-4">
+											<input id="aValue" class="form-control" placeholder="00.00" type="text" required disabled>
+										</div>
+									</div>
+									<div class="form-group row m-b-15">
+										<label class="col-md-4 control-label">Valor Nivel B</label>
+										<div class="col-md-4">
+											<input id="bValue" class="form-control" placeholder="00.00" type="text" required disabled>
+										</div>
+									</div>
+									<div class="form-group row m-b-15">
+										<label class="col-md-4 control-label">Valor Nivel C</label>
+										<div class="col-md-4">
+											<input id="cValue" class="form-control" placeholder="00.00" type="text" required disabled>
+										</div>
+									</div>
+								</div>
+								<legend></legend>
+
+								<legend class="text-center">Nomenclador NBU</legend>		
+								<div class="row" id="form-nbu">
+									<div class="form-group row m-b-15">
+										<label class="col-md-4 control-label">Valor N.B.U.</label>
+										<div class="col-md-4">
+											<input id="nbuValue" class="form-control" placeholder="00.00" type="text" required disabled>
+										</div>
+									</div>
+									<div class="form-group row m-b-15">
+										<label class="col-md-4 control-label" for="comments">Comentarios</label>
+										<div class="col-md-5">
+											<textarea class="form-control" id="comments" maxlength="500" placeholder="Comentarios" rows="4" style="resize: none;" disabled></textarea>
+										</div>
+									</div>	
+									<div class="form-group row m-b-15">
+										<label class="col-md-4 control-label" for="internalComments">Comentarios Internos</label>
+										<div class="col-md-5">
+											<textarea class="form-control" id="internalComments" maxlength="500" placeholder="Comentarios" rows="4" style="resize: none;" disabled></textarea>
+										</div>
+									</div>
+								</div>
+								<legend></legend>
+								</fieldset>
+							</fieldset>
+							<div class="form-actions text-center">
+								<div class="row">
+									<div class="col-md-12">
+										<input class="btn btn-primary" type="button" onclick="RemoveWelfare();" id="btn-removeWelfare" value="Eliminar Obra Social">
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<!-- end widget -->
+		</article>
+		<div class="col-sm-3 col-md-2 col-lg-2"></div>
+	</div>
+</section>
+<script src="assets/js/welfares/remove-welfare.js"></script>

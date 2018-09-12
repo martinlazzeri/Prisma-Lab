@@ -1,0 +1,75 @@
+<section id="widget-grid" class="">
+	<div class="row">
+		<div class="col-sm-3 col-md-2 col-lg-2"></div>
+		<article class="col-sm-6 col-md-8 col-lg-8">
+			<div class="jarviswidget" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false">						
+				<header>							
+					<span class="widget-icon"> <i class="fa fa-user"></i> </span>
+					<h2>Alta de Médicos</h2>
+				</header>
+				<div>
+					<div class="jarviswidget-editbox">
+					</div>
+					<div class="widget-body">
+						<form id="form-addDoctors" class="form-horizontal">
+							<fieldset>
+								<div class="form-group row m-b-15">
+									<label class="col-md-4 control-label">Matrícula <span class="text-danger">*</span></label>
+									<div class="col-md-2">
+										<input id="enrollment" onblur="CheckDoctorInputs('enrollment', 'enrollment');" class="form-control" placeholder="XXXXXX" type="number" maxlength="6" min="1" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57" required/>
+										<div class="error-message error-enrollment"></div>
+									</div>
+								</div>
+								<div class="form-group row m-b-15">
+									<label class="col-md-4 control-label" for="typeEnrollment">Tipo de Matrícula <span class="text-danger">*</span></label>
+									<div class="col-md-4">			
+										<select class="form-control" id="typeEnrollment" required>
+											<option selected="" disabled="">Seleccione una opción</option>
+											<option value="0">Provincial</option>
+											<option value="1">Nacional</option>
+										</select> 
+									</div>
+								</div>
+								<div class="form-group row m-b-15">
+									<label class="col-md-4 control-label">Nombre <span class="text-danger">*</span></label>
+									<div class="col-md-4">	
+										<input id="firstname" class="form-control" placeholder="Nombre del médico" type="text" required>
+									</div>
+								</div>
+								<div class="form-group row m-b-15">
+									<label class="col-md-4 control-label">Apellido <span class="text-danger">*</span></label>
+									<div class="col-md-4">	
+										<input id="lastname" class="form-control" placeholder="Apellido del médico" type="text" required>
+									</div>
+								</div>
+								<div class="form-group row m-b-15">
+									<label class="col-md-4 control-label">Domicilio</label>
+									<div class="col-md-4">	
+										<input id="address" class="form-control" placeholder="Domicilio" type="text">
+									</div>
+								</div>
+								<div class="form-group row m-b-15">
+									<label class="col-md-4 control-label">Teléfono</label>
+									<div class="col-md-4">	
+										<input id="phone" class="form-control" placeholder="Teléfono" type="number" maxlength="10" min="1" max="9999999999" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"/>
+									</div>
+								</div>
+							</fieldset>									
+							<div class="form-actions text-center">
+								<div class="row">
+									<div class="col-md-12">
+										<button class="btn btn-primary" onclick="AddDoctor();" type="button" id="btn-addDoctor">
+											Ingresar Médico
+										</button>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</article>
+		<div class="col-sm-3 col-md-2 col-lg-2"></div>
+	</div>
+</section>		
+<script src="assets/js/doctors/add-doctor.js"></script>

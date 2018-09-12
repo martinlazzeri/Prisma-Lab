@@ -1,0 +1,96 @@
+<section id="widget-grid" class="">
+	<div class="row">
+		<div class="col-sm-3 col-md-2 col-lg-2"></div>
+		<article class="col-sm-6 col-md-8 col-lg-8">
+			<div class="jarviswidget col-lg-12" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false">
+				<header>
+					<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
+					<h2>Modificación de Usuarios</h2>		
+				</header>
+				<div>
+					<div class="widget-body">
+						<form class="form-horizontal" id="form-editUsers">
+							<fieldset>			
+								<div class="form-group row m-b-15">					
+									<label class="col-md-4 control-label">Buscar Usuario</label>
+									<div class="col-md-4">
+										<input class="form-control ui-autocomplete-input" placeholder="Usuario - Nombre, Apellido" type="text" id="search-user" autocomplete="off">
+									</div>
+								</div>
+								<div class="form-group row m-b-15">
+									<label class="col-md-4 control-label">Nombre</label>
+									<div class="col-md-4">
+										<input class="form-control" id="firstname" type="text" placeholder="Nombre" required disabled maxlength="50">
+									</div>
+								</div>
+								<div class="form-group row m-b-15">				
+									<label class="col-md-4 control-label">Apellido</label>
+									<div class="col-md-4">
+										<input class="form-control" id="lastname" type="text" placeholder="Apellido" required disabled maxlength="50">
+									</div>
+								</div>
+								<div class="form-group row m-b-15">
+									<label class="col-md-4 control-label">Nombre de Usuario</label>
+									<div class="col-md-4">
+										<input id="user-username" class="form-control" placeholder="Nombre de usuario" type="text" required disabled>
+									</div>
+								</div>
+								<div class="form-group row m-b-15">
+									<label class="col-md-4 control-label">Email</label>
+									<div class="col-md-4">
+										<input id="email" class="form-control" placeholder="Email" type="email" required disabled maxlength="100">
+									</div>
+								</div>
+								<div class="form-group row m-b-15">
+									<label class="col-md-4 control-label">Fecha de Nacimiento</label>
+									<div class="col-md-3">
+										<input id="birthdate" class="form-control" type="date" required disabled>
+									</div>
+								</div>
+								<div class="form-group row m-b-15">
+									<section class="col col-2">
+										<label class="col-md-4 control-label">Role de Usuario</label>
+										<div class="col-md-4">
+											<select class="form-control" id="roleId" disabled>
+												<option selected="" disabled="">Seleccione una opción</option>
+												<option value="1">Administrador</option>
+												<option value="2">Auditor</option>
+												<option value="3">Director</option>
+												<option value="4">Secretaria</option>
+											</select>
+										</div>
+									</section>									
+								</div>				
+								<div class="form-group row m-b-15">
+									<label class="col-md-4 control-label">Imagen</label>
+									<div class="col-md-5">
+										<input id="image" name="upload" multiple type="file" class="btn btn-default" accept="image/*" onchange="ReadURL(this)">
+										<p class="help-block">
+											Seleccione una imagen para el usuario
+										</p>
+									</div>
+								</div>
+								<div class="form-group row m-b-15">
+									<label class="col-md-4 control-label">Previsualización</label>
+									<div class="col-md-4">
+										<img id="ShowImage" src="assets/img/users/avatar.gif" style="width:200px;heigth:200px">
+									</div>
+								</div>
+							</fieldset>
+							<div class="form-actions text-center">
+								<div class="row">
+									<div class="col-md-12">
+										<input class="btn btn-primary" id="btn-editUser" onclick="EditUser();" type="button" value="Modificar Usuario" disabled>											
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<!-- end widget -->
+		</article>
+		<div class="col-sm-3 col-md-2 col-lg-2"></div>
+	</div>
+</section>
+<script src="assets/js/users/edit-user.js"></script>

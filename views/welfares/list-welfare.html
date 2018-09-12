@@ -1,0 +1,262 @@
+<section id="widget-grid" class="">
+			<!-- row -->
+	<div class="row">
+		<!-- NEW WIDGET START -->
+		<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12 container-fluid">
+			<!-- Widget ID (each widget will need unique ID)-->
+			<div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-0" data-widget-editbutton="false">
+				<article class="col-sm-12 col-md-12 col-lg-12">
+					<!-- Widget ID (each widget will need unique ID)-->
+					<div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-2" data-widget-editbutton="false">
+						<header>
+							<span class="widget-icon"> <i class="fa fa-list"></i> </span>
+							<h2>Listado de Mutuales</h2>
+						</header>
+						<!-- widget div-->
+						<div>
+							<!-- widget edit box -->
+							<div class="jarviswidget-editbox">
+								<!-- This area used as dropdown edit box -->
+							</div>
+							<!-- end widget edit box -->
+							<!-- widget content -->
+							<div class="widget-body no-padding">
+								<table class="table table-hover">
+									<thead>
+										<tr>
+											<th>Cód.</th>
+											<th>Nombre</th>
+											<th>Abona Dom.</th>
+											<th>PMO</th>
+											<th>Cobra Coseguro</th>
+											<th>Serv. Cortados</th>
+											<th>INOS Reduc.</th>
+											<th>677</th>
+											<th>Nomen. Comp.</th>
+											<th>Nivel A</th>
+											<th>Nivel B</th>
+											<th>Nivel C</th>
+											<th>Valor NBU</th>
+											<th>Boleta Mínima</th>
+											<th>APB</th>
+											<th>% Cob.</th>
+										</tr>
+									</thead>
+									<tbody id="listWelfare"></tbody>									
+								</table>
+								<div class="text-center">
+                  <div class="col-sm-5" id="paginated"></div>
+                  <div class="col-sm-7">
+                      <div class="dataTables_paginate paging_simple_numbers" id="data-table-default_paginate">
+                          <ul class="pagination" id="btn-page">
+                          </ul>
+                      </div>
+                  </div>										
+								</div>
+							</div>
+							<!-- end widget content -->
+						</div>
+						<!-- end widget div -->
+					</div>
+					<!-- end widget -->
+				</article>
+			</div>
+		</article>
+	</div>
+</section>
+
+<div class="modal fade" id="mostrar-info">
+	<div class="modal-dialog">
+	    <div class="modal-content">
+    	  	<div class="modal-header">
+        		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+	        	<h4 class="modal-title">Info Mutual</h4>
+	      	</div>
+	      	<div class="modal-body">
+    	    	<section>
+    	    		<div class="row">	    	    		
+						<div class="form-group">
+							<label class="col-md-5 control-label">Código de la Mutual</label>
+							<div class="col-md-5">
+								<input id="codigo" class="form-control" type="text" disabled>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-md-5 control-label">Nombre de la Mutual</label>
+							<div class="col-md-5">
+								<input id="nombre" class="form-control" type="text" disabled>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-md-5 control-label" for="porc-cobertura">Porcentaje de Cobertura</label>
+							<div class="col-md-5">
+								<input type="text" class="form-control" id="porc-cobertura" disabled>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-md-5 control-label">Importe Boleta Mínima</label>
+							<div class="col-md-5">
+								<input id="importe-boleta" class="form-control" type="text" disabled>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-md-5 control-label" for="abona-apb">¿Abona A.P.B.?</label>
+							<div class="col-md-5">			
+								<select class="form-control" id="abona-apb" disabled>
+									<option selected="" disabled="">Seleccione una opción</option>
+									<option value="1">Si</option>
+									<option value="0">No</option>
+								</select> 
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-md-5 control-label" for="abona-domicilio">¿Abona Domicilio?</label>
+							<div class="col-md-5">			
+								<select class="form-control" id="abona-domicilio" disabled>
+									<option selected="" disabled="">Seleccione una opción</option>
+									<option value="1">Si</option>
+									<option value="0">No</option>
+								</select> 
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-md-5 control-label" for="pmo">¿P.M.O.?</label>
+							<div class="col-md-5">			
+								<select class="form-control" id="pmo" disabled>
+									<option selected="" disabled="">Seleccione una opción</option>
+									<option value="1">Si</option>
+									<option value="0">No</option>
+								</select> 
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-md-5 control-label" for="cobra-coseguro">¿Cobra Coseguro?</label>
+							<div class="col-md-5">			
+								<select class="form-control" id="cobra-coseguro" disabled>
+									<option selected="" disabled="">Seleccione una opción</option>
+									<option value="1">Si</option>
+									<option value="0">No</option>
+								</select> 
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-md-5 control-label" for="servicios-cortados">¿Servicios Cortados?</label>
+							<div class="col-md-5">			
+								<select class="form-control" id="servicios-cortados" disabled>
+									<option selected="" disabled="">Seleccione una opción</option>
+									<option value="1">Si</option>
+									<option value="0">No</option>
+								</select> 
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-md-5 control-label" for="nomen-completo">¿Nomen. Completo?</label>
+							<div class="col-md-5">			
+								<select class="form-control" id="nomen-completo" disabled>
+									<option selected="" disabled="">Seleccione una opción</option>
+									<option value="1">Si</option>
+									<option value="0">No</option>
+								</select> 
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-md-5 control-label" for="reconoce-677">¿Reconoce 677?</label>
+							<div class="col-md-5">			
+								<select class="form-control" id="reconoce-677" disabled>
+									<option selected="" disabled="">Seleccione una opción</option>
+									<option value="1">Si</option>
+									<option value="0">No</option>
+								</select> 
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-md-5 control-label">% (0 - 100)</label>
+							<div class="col-md-5">
+								<input id="porcentaje" class="form-control" type="number" min="0" max="100" disabled>										
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-md-5 control-label">Condición</label>
+							<div class="col-md-5">	
+								<select class="form-control" id="condicion" disabled>
+									<option selected="" disabled="">Seleccione una opción</option>
+									<option value="0">No Reconocida</option>
+									<option value="1">Reconocida</option>
+									<option value="2">No Autorizada</option>
+									<option value="3">Autorizada</option>
+									<option value="4">Requiere Autorización</option>
+								</select>
+								<p class="note">Definición frecuenta para NBU</p>
+							</div>
+						</div>
+						
+						<legend>Nomenclador I.N.O.S.</legend>
+						<div class="form-group">
+							<label class="col-md-5 control-label">Coeficiente U. Gastos</label>
+							<div class="col-md-5">
+								<input id="coeficiente-gastos" class="form-control" type="text" disabled>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-md-5 control-label">Coeficiente U. Honorarios</label>
+							<div class="col-md-5">
+								<input id="coeficiente-honorarios" class="form-control" type="text" disabled>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-md-5 control-label" for="inos-reducido">¿INOS Reducido?</label>
+							<div class="col-md-5">			
+								<select class="form-control" id="inos-reducido" disabled>
+									<option selected="" disabled="">Seleccione una opción</option>
+									<option value="1">Si</option>
+									<option value="0">No</option>
+								</select> 
+							</div>
+						</div>	
+						<legend>Nomenclador F.A.B.A.</legend>					
+						<div class="form-group">
+							<label class="col-md-5 control-label">Valor Nivel A</label>
+							<div class="col-md-5">
+								<input id="valor-a" class="form-control" type="text" disabled>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-md-5 control-label">Valor Nivel B</label>
+							<div class="col-md-5">
+								<input id="valor-b" class="form-control" type="text" disabled>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-md-5 control-label">Valor Nivel C</label>
+							<div class="col-md-5">
+								<input id="valor-c" class="form-control" type="text" disabled>
+							</div>
+						</div>
+						<legend>Nomenclador N.B.U.</legend>
+						<div class="form-group">
+							<label class="col-md-5 control-label">Valor N.B.U.</label>
+							<div class="col-md-5">
+								<input id="valor-nbu" class="form-control" type="text" disabled>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-md-5 control-label" for="comentarios">Comentarios</label>
+							<div class="col-md-5">
+								<textarea class="form-control" id="comentarios" disabled style="resize: none;"></textarea>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-md-5 control-label" for="comentarios-internos">Comentarios Internos</label>
+							<div class="col-md-5">
+								<textarea class="form-control" id="comentarios-internos" disabled style="resize: none;"></textarea>
+							</div>
+						</div>						
+					</div>
+				</section>
+        	</div>
+      		<div class="modal-footer">	      			
+	        	<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>		        	
+      		</div>
+    	</div>
+    </div>
+</div>

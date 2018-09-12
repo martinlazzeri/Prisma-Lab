@@ -1,0 +1,21 @@
+.error-message p {
+	color: red;
+}
+
+.fa-reorder {
+	padding: 4px 5px 5px 5px;
+}
+
+.fa-sign-out {
+	padding: 4px 5px 5px 5px;
+}
+
+.icon-logout{
+	color: red;
+}
+
+#btn-addPatient {
+  position: relative;
+  text-align: center;
+  width: auto;
+}
