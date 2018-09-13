@@ -231,60 +231,60 @@
 									</div>
 								</div>
 								<div class="form-group row m-b-15">
-									<label class="col-md-4 control-label" for="payAtHome">Domicilio<span class="text-danger">*</span></label>
-									<div class="col-md-4">			
+									<label class="col-md-4 control-label" for="payAtHome">Abona a domicilio<span class="text-danger">*</span></label>
+									<div class="col-md-3">			
 										<select class="form-control" id="payAtHome" required>
-											<option selected="" disabled="">Seleccione una opción</option>
+											<option selected="" disabled="">Seleccione</option>
 											<option value="1">Si</option>
 											<option value="0">No</option>
 										</select> 
 									</div>
 								</div>
 								<div class="form-group row m-b-15">
-									<label class="col-md-4 control-label" for="pmo">¿P.M.O.?<span class="text-danger">*</span></label>
-									<div class="col-md-4">			
+									<label class="col-md-4 control-label" for="pmo">P.M.O.<span class="text-danger">*</span></label>
+									<div class="col-md-3">			
 										<select class="form-control" id="pmo" required>
-											<option selected="" disabled="">Seleccione una opción</option>
+											<option selected="" disabled="">Seleccione</option>
 											<option value="1">Si</option>
 											<option value="0">No</option>
 										</select> 
 									</div>
 								</div>
 								<div class="form-group row m-b-15">
-									<label class="col-md-4 control-label" for="coinsurance">¿Cobra Coseguro?<span class="text-danger">*</span></label>
-									<div class="col-md-4">			
+									<label class="col-md-4 control-label" for="coinsurance">Cobra Coseguro<span class="text-danger">*</span></label>
+									<div class="col-md-3">			
 										<select class="form-control" id="coinsurance" required>
-											<option selected="" disabled="">Seleccione una opción</option>
+											<option selected="" disabled="">Seleccione</option>
 											<option value="1">Si</option>
 											<option value="0">No</option>
 										</select> 
 									</div>
 								</div>
 								<div class="form-group row m-b-15">
-									<label class="col-md-4 control-label" for="serviceAvailable">¿Servicios Cortados?<span class="text-danger">*</span></label>
-									<div class="col-md-4">			
+									<label class="col-md-4 control-label" for="serviceAvailable">Servicios Cortados<span class="text-danger">*</span></label>
+									<div class="col-md-3">			
 										<select class="form-control" id="serviceAvailable" required>
-											<option selected="" disabled="">Seleccione una opción</option>
+											<option selected="" disabled="">Seleccione</option>
 											<option value="1">Si</option>
 											<option value="0">No</option>
 										</select> 
 									</div>
 								</div>
 								<div class="form-group row m-b-15">
-									<label class="col-md-4 control-label" for="completeNomenclator">¿Nomen. Completo?<span class="text-danger">*</span></label>
-									<div class="col-md-4">			
+									<label class="col-md-4 control-label" for="completeNomenclator">Nomen. Completo<span class="text-danger">*</span></label>
+									<div class="col-md-3">			
 										<select class="form-control" id="completeNomenclator" required>
-											<option selected="" disabled="">Seleccione una opción</option>
+											<option selected="" disabled="">Seleccione</option>
 											<option value="1">Si</option>
 											<option value="0">No</option>
 										</select> 
 									</div>
 								</div>
 								<div class="form-group row m-b-15">
-									<label class="col-md-4 control-label" for="disposableMaterial">¿Reconoce 677?<span class="text-danger">*</span></label>
-									<div class="col-md-4">			
+									<label class="col-md-4 control-label" for="disposableMaterial">Reconoce 677<span class="text-danger">*</span></label>
+									<div class="col-md-3">			
 										<select class="form-control" id="disposableMaterial" required>
-											<option selected="" disabled="">Seleccione una opción</option>
+											<option selected="" disabled="">Seleccione</option>
 											<option value="1">Si</option>
 											<option value="0">No</option>
 										</select> 
@@ -293,35 +293,26 @@
 								<div class="form-group row m-b-15">
 									<label class="col-md-4 control-label">% (0 - 100)<span class="text-danger">*</span></label>
 									<div class="col-md-4">
-										<input id="percentage" class="form-control" type="number" min="0" max="100" required>										
+										<input id="percentage" class="form-control" type="number" min="0" max="100" placeholder="Porcentaje" required>										
 									</div>
 								</div>							
 							</fieldset>							
 
 							<fieldset>
 								<legend class="text-center">Nomenclador INOS</legend>
-								<section class="text-center">
-									<input id="check-inos" type="checkbox">¿Habilita?</input>
-								</section>
-								<div class="row" hidden id="form-inos">
 									<div class="form-group row m-b-15">
-										<label class="col-md-4 control-label" for="inosReducido">¿INOS Reducido?</label>
-										<div class="col-md-4">			
+										<label class="col-md-4 control-label" for="inosReducido">INOS Reducido</label>
+										<div class="col-md-3">			
 											<select class="form-control" id="inosReducido" required>
-												<option selected="" disabled="">Seleccione una opción</option>
+												<option selected="" disabled="">Seleccione</option>
 												<option value="1">Si</option>
 												<option value="0">No</option>
 											</select> 
 										</div>
 									</div>
-								</div>
 								<legend></legend>
 
-								<legend class="text-center">Nomenclador FABA</legend>
-								<section class="text-center">
-									<input id="check-faba" type="checkbox">¿Habilita?</input>
-								</section>								
-								<div class="row" hidden id="form-faba">
+								<legend class="text-center">Nomenclador FABA</legend>							
 									<div class="form-group row m-b-15">
 										<label class="col-md-4 control-label">Valor Nivel A</label>
 										<div class="col-md-4">
@@ -340,14 +331,9 @@
 											<input id="cValue" class="form-control" placeholder="00.00" type="text" required>
 										</div>
 									</div>
-								</div>
 								<legend></legend>
 
-								<legend class="text-center">Nomenclador NBU</legend>
-								<section class="text-center">
-									<input id="check-nbu" type="checkbox">¿Habilita?</input>
-								</section>			
-								<div class="row" hidden id="form-nbu">
+								<legend class="text-center">Nomenclador NBU</legend>	
 									<div class="form-group row m-b-15">
 										<label class="col-md-4 control-label">Valor N.B.U.</label>
 										<div class="col-md-4">
@@ -366,7 +352,6 @@
 											<textarea class="form-control" id="internalComments" maxlength="500" placeholder="Comentarios" rows="4" style="resize: none;"></textarea>
 										</div>
 									</div>
-								</div>
 								<legend></legend>
 							</fieldset>									
 						</form>

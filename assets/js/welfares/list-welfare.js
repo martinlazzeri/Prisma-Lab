@@ -75,8 +75,8 @@ function GetWelfaresByPaginated($page) {
 			          										"<td>" + welfare.cValue + "</td>"+
 			          										"<td>" + welfare.nbuValue + "</td>"+
 			          										"<td>" + welfare.minimumAmount + "</td>"+
-			          										"<td>" + welfare.coveragePercentage + "</td>"+
-			                        			"<td>" + welfare.percentage + "</td>"+
+			          										"<td>" + welfare.percentage + "</td>"+
+			                        			"<td>" + welfare.coveragePercentage + "</td>"+
 								  							 "</tr>");   				
  			});
 		},
