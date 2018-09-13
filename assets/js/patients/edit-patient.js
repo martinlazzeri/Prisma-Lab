@@ -1,23 +1,23 @@
 $(document).ready(function(){
-	$("#search-doctor").focus();
+	$("#search-patient").focus();
 });
 
-$("#search-doctor").autocomplete({
+$("#search-patient").autocomplete({
 	source : function(request, response) {
 		$.ajax({
 			type: 'POST',
-			url : 'api/doctors/search/userId/'+$.cookie('UserId'),
+			url : 'api/patients/search/userId/'+$.cookie('UserId'),
 			headers: {"Content-Type": "application/json",
 								"Authorization": $.cookie('token_type') + ' '+ $.cookie('access_token')},
 			dataType: 'json',
-			data: JSON.stringify({'searchCriteria': $('#search-doctor').val()}),
+			data: JSON.stringify({'searchCriteria': $('#search-patient').val()}),
 			success : function(data){
-				response($.map(data.Doctors, function(item) {
-					var doctor = JSON.parse(item);
+				response($.map(data.Patients, function(item) {
+					var patient = JSON.parse(item);
 
 					return {
-						label : doctor.enrollment + " - " + doctor.firstname +" " + doctor.lastname,
-						value : doctor.id
+						label : patient.dni + " - " + patient.firstname +" " + patient.lastname,
+						value : patient.id
 					};
 				}));
 			},
@@ -25,7 +25,7 @@ $("#search-doctor").autocomplete({
 				if(error.status == 404){
 					$.bigBox({
 						title : "Error",
-						content : "No existen médicos creados.",
+						content : "No existen pacientes creados.",
 						color : "#C46A69",
 						timeout: 8000,
 						icon : "fa fa-warning shake animated"
@@ -36,29 +36,32 @@ $("#search-doctor").autocomplete({
 	},
 	minLength : 2,
 	select : function(event, ui) {
-		$('#search-doctor').removeClass('ui-autocomplete-loading');
-		GetDoctorById(ui.item.value);
+		$('#search-patient').removeClass('ui-autocomplete-loading');
+		GetPatientById(ui.item.value);
 	}
 });
 
-function EditDoctor(){
+function EditPatient(){
+
 	$.ajax({
 		type: 'PUT',
-		url: 'api/doctors/'+$('#search-user').val()+'/userId/'+$.cookie('UserId'),
+		url: 'api/patients/'+$('#search-patient').val()+'/userId/'+$.cookie('UserId'),
 		headers: {"Content-Type": "application/json",
 							"Authorization": $.cookie('token_type') + ' '+ $.cookie('access_token')},
 		dataType: 'json',
-    data: JSON.stringify({'typeEnrollment': $('#typeEnrollment').val(),
-                          'firstname': $('#firstname').val(),
-                          'lastname' : $('#lastname').val(),
+    data: JSON.stringify({'firstname': $('#firstname').val(),
+                          'lastname': $('#lastname').val(),
+                          'birthdate' : $('#birthdate').val(),
+                          'sex': $('#sex').val(),
                           'address': $('#address').val(),
-                          'phone': $('#phone').val()}),
+                          'phone': $('#phone').val(),
+                          'email': $('#email').val()}),
 		success: function(response){
-	    CleanDoctorForm('editDoctor');
-
+	    CleanPatientForm('editPatient');
+	    
 			$.bigBox({
 				title : "Éxito",
-				content : "El médico se ha modificado correctamente.",
+				content : "El paciente se ha modificado correctamente.",
 				color : "#739E73",
 				timeout: 5000,
 				icon : "fa fa-check"					

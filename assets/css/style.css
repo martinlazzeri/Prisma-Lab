@@ -14,19 +14,19 @@
 	color: red;
 }
 
-#btn-addPatient {
+#btn-addNewPatient {
   position: relative;
   text-align: center;
   width: auto;
 }
 
-#btn-addnewDoctor{
+#btn-addNewDoctor{
   position: relative;
   text-align: center;
   width: auto;
 }
 
-#btn-addnewWelfare{
+#btn-addNewWelfare{
   position: relative;
   text-align: center;
   width: auto;

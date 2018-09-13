@@ -17,6 +17,17 @@ $("#search-patient").autocomplete({
 						value2 : patient.id
 					};
 				}));
+			},
+			error:function(error){
+				if(error.status == 404){
+					$.bigBox({
+						title : "Error",
+						content : "No existen pacientes creados.",
+						color : "#C46A69",
+						timeout: 8000,
+						icon : "fa fa-warning shake animated"
+					});
+				}
 			}
 		});
 	},
@@ -44,8 +55,19 @@ $("#search-welfare").autocomplete({
 						label : welfare.code + " - " + welfare.name,
 						value : welfare.code + " - " + welfare.name,
 						value2 : welfare.id
-					}
+					};
 				}));
+			},
+			error:function(error){
+				if(error.status == 404){
+					$.bigBox({
+						title : "Error",
+						content : "No existen obras sociales creadas.",
+						color : "#C46A69",
+						timeout: 8000,
+						icon : "fa fa-warning shake animated"
+					});
+				}
 			}
 		});
 	},
@@ -73,8 +95,19 @@ $("#search-doctor").autocomplete({
 						label : doctor.enrollment + " - " + doctor.firstname +" " + doctor.lastname,
 						value : doctor.enrollment + " - " + doctor.firstname +" " + doctor.lastname,
 						value2 : doctor.id
-					}
+					};
 				}));
+			},
+			error:function(error){
+				if(error.status == 404){
+					$.bigBox({
+						title : "Error",
+						content : "No existen médicos creados.",
+						color : "#C46A69",
+						timeout: 8000,
+						icon : "fa fa-warning shake animated"
+					});
+				}
 			}
 		});
 	},

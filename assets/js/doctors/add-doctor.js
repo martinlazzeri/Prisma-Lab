@@ -2,7 +2,7 @@ $(document).ready(function(){
   $("#enrollment").focus();
 });
 
-$('#btn-addnewDoctor').on('click', function(){
+$('#btn-addNewDoctor').on('click', function(){
   setTimeout(function(){ $('#enrollment').focus(); }, 180);
 });
 

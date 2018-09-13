@@ -1,23 +1,23 @@
 $(document).ready(function(){
-	$("#search-user").focus();
+	$("#search-patient").focus();
 });
 
-$("#search-user").autocomplete({
+$("#search-patient").autocomplete({
 	source : function(request, response) {
 		$.ajax({
 			type: 'POST',
-			url : 'api/users/search/userId/'+$.cookie('UserId'),
+			url : 'api/patients/search/userId/'+$.cookie('UserId'),
 			headers: {"Content-Type": "application/json",
 								"Authorization": $.cookie('token_type') + ' '+ $.cookie('access_token')},
 			dataType: 'json',
-			data: JSON.stringify({'searchCriteria': $('#search-user').val()}),
+			data: JSON.stringify({'searchCriteria': $('#search-patient').val()}),
 			success : function(data){
-				response($.map(data.Users, function(item) {
-					var user = JSON.parse(item);
+				response($.map(data.Patients, function(item) {
+					var patient = JSON.parse(item);
 
 					return {
-						label : user.username + " - " + user.firstname + " "+ user.lastname,
-						value : user.id
+						label : patient.dni + " - " + patient.firstname +" " + patient.lastname,
+						value : patient.id
 					};
 				}));
 			},
@@ -25,7 +25,7 @@ $("#search-user").autocomplete({
 				if(error.status == 404){
 					$.bigBox({
 						title : "Error",
-						content : "No existen usuarios creados.",
+						content : "No existen pacientes creados.",
 						color : "#C46A69",
 						timeout: 8000,
 						icon : "fa fa-warning shake animated"
@@ -36,25 +36,26 @@ $("#search-user").autocomplete({
 	},
 	minLength : 2,
 	select : function(event, ui) {
-		$('#search-user').removeClass('ui-autocomplete-loading');
-		GetUserById(ui.item.value);
-		$('#btn-removeUser').removeAttr('disabled');
+		$('#search-patient').removeClass('ui-autocomplete-loading');
+		GetPatientById(ui.item.value);
+		$('#btn-removePatient').removeAttr('disabled');
 	}
 });
 
-function RemoveUser(){
+function RemovePatient(){
+
 	$.ajax({
 		type: 'DELETE',
-		url: 'api/users/'+$("#search-user").val()+'/userId/'+$.cookie('UserId'),
+		url: 'api/patients/'+$("#search-patient").val()+'/userId/'+$.cookie('UserId'),
 		headers: {"Content-Type": "application/json",
 							"Authorization": $.cookie('token_type') + ' '+ $.cookie('access_token')},
 		dataType: 'json',
 		success: function(response){
-	    CleanUserForm('removeUser');
+	    CleanPatientForm('removePatient');
 
 			$.bigBox({
 				title : "Éxito",
-				content : "El usuario se ha eliminado correctamente.",
+				content : "El paciente se ha eliminado correctamente.",
 				color : "#739E73",
 				timeout: 5000,
 				icon : "fa fa-check"					

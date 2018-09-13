@@ -136,7 +136,7 @@ class PatientService extends BaseService implements IPatientService{
   	$patientsArray = array();
   	
 		if (!is_null($patients)){
-		  foreach ($patient as $patient){
+		  foreach ($patients as $patient){
 		  	$patientsArray[] = (new PatientModel((array) json_decode($patient)))->Expose();
 		  }
 

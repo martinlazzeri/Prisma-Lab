@@ -1,6 +1,8 @@
 <script src="assets/plugins/jquery/jquery-3.2.1.min.js"></script>
 <script src="assets/plugins/js-cookie/js.cookie.js"></script>
 <script src="assets/plugins/jquery-cookie/jquery.cookie.js"></script>
+<script src="assets/plugins/bootstrap-daterangepicker/moment.js"></script>
+<script src="assets/plugins/moment-with-locales.min.js"></script>
 
 <script>
 	if($.cookie('UserId') == undefined){
@@ -80,7 +82,7 @@ include("inc/nav.php");
 					$("#ribbon-breadcrum").text("Procesos de Ingresos / Pacientes");
 					break;
 			case 102:
-					$("#content").fadeIn("slow").load("views/entries/patients/add-entry.html");
+					$("#content").fadeIn("slow").load("views/entries/add-entry.html");
 					$("#IngresoNormal").addClass("active");					
 					$("#ribbon-breadcrum").text("Procesos de Ingresos / Pacientes / Ingreso Normal");
 					document.title = $.cookie("NombreLab")+" - Ingreso Normal de Pacientes";
@@ -659,6 +661,64 @@ include("inc/nav.php");
 					break;
 			// Fin Sección Usuarios
 
+			// Sección Pacientes
+			case 800:
+					$("#ribbon-breadcrum").text("Pacientes");
+					break;
+			case 801:
+					$("#ribbon-breadcrum").text("Pacientes / Altas");
+					break;
+			case 802:
+					$("#content").fadeIn("slow").load("views/patients/add-patient.html");
+					$("#AltaPaciente").addClass("active");
+					$("#ribbon-breadcrum").text("Pacientes / Altas");
+					document.title = $.cookie("NombreLab")+" - Alta de Paciente";
+				  if(mobile.Any()){
+					  $("html").toggleClass("hidden-menu-mobile-lock");
+						$("body").toggleClass("hidden-menu");
+				  } 
+					break;
+			case 803:
+					$("#ribbon-breadcrum").text("Pacientes / Modificaciones");
+					break;
+			case 804:
+					$("#content").fadeIn("slow").load("views/patients/edit-patient.html");
+					$("#ModificacionPaciente").addClass("active");
+					$("#ribbon-breadcrum").text("Pacientes / Modificaciones / Modificación");
+					document.title = $.cookie("NombreLab")+" - Modificación de Paciente";
+				  if(mobile.Any()){
+					  $("html").toggleClass("hidden-menu-mobile-lock");
+						$("body").toggleClass("hidden-menu");
+				  } 					break;
+			case 805:
+					$("#ribbon-breadcrum").text("Pacientes / Borrado");
+					break;
+			case 806:
+					$("#content").fadeIn("slow").load("views/patients/remove-patient.html");
+					$("#BorradoPaciente").addClass("active");
+					$("#ribbon-breadcrum").text("Pacientes / Borrado / Borrado Normal");
+					document.title = $.cookie("NombreLab")+" - Borrado de Paciente";
+				  if(mobile.Any()){
+					  $("html").toggleClass("hidden-menu-mobile-lock");
+						$("body").toggleClass("hidden-menu");
+				  } 
+					break;
+			case 807:	
+					$("#ribbon-breadcrum").text("Pacientes / Listados");
+					break;		
+			case 808:
+					$("#content").fadeIn("slow").load("views/patients/list-patient.html");
+					$("#ListadoPaciente").addClass("active");
+					$("#ribbon-breadcrum").text("Pacientes / Listado Normal");
+					document.title = $.cookie("NombreLab")+" - Listados / Listado Normal";
+					GetPatientsByPaginated(0);
+				  if(mobile.Any()){
+					  $("html").toggleClass("hidden-menu-mobile-lock");
+						$("body").toggleClass("hidden-menu");
+				  } 
+					break;
+			// Fin Sección Pacientes
+
 			// Sección Configuraciones
 			case 700:
 					$("#ribbon-breadcrum").text("Configuraciones");					
@@ -1049,6 +1109,7 @@ include("inc/nav.php");
 <script src="assets/js/users/list-user.js"></script>
 <script src="assets/js/doctors/list-doctor.js"></script>
 <script src="assets/js/welfares/list-welfare.js"></script>
+<script src="assets/js/patients/list-patient.js"></script>
 <?php 
 	//include footer
 	include("inc/google-analytics.php"); 

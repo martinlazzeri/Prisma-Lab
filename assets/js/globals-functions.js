@@ -269,15 +269,22 @@ function GetWelfareById($id){
 
 //Patients
 function CleanPatientForm($name){
-	if($name == 'addModalPatient'){
-		$("#form-addModalPatients").get(0).reset();
-		$('#modalPatient').modal('hide');
+	if($name == 'addPatient'){
+		$("#form-addPatients").get(0).reset();
+		$('#dni').focus();
 	} else if($name == 'editPatient'){
 		$("#form-editPatients").get(0).reset();
 		$("#form-editPatients :input").prop("disabled", true); 
+		$("#search-patient").prop("disabled", false);
+		$("#search-patient").focus();
 	} else if($name == 'removePatient'){
 		$("#form-removePatients").get(0).reset();
-	} 
+		$("#search-patient").prop("disabled", false);
+		$("#search-patient").focus();
+	} else if($name == 'addModalPatient'){
+		$("#form-addModalPatients").get(0).reset();
+		$('#modalPatient').modal('hide');
+	}
 }
 
 function CheckPatientInputs($checkName, $name){
@@ -312,18 +319,19 @@ function GetPatientById($id){
 							"Authorization": $.cookie('token_type') + ' '+ $.cookie('access_token')},
 		dataType: 'json',
 		success: function(response){
-			var welfare = JSON.parse(response.Data);
+			var patient = JSON.parse(response.Data);
 
 			$("#form-editPatients :input").prop("disabled", false);	
 			$('#dni').prop("disabled", true);
-			$('#dni').val(welfare.dni);
+			$('#dni').val(patient.dni);
+			$('#firstname').val(patient.firstname);
 			$("#firstname").focus();	
-			$('#lastname').val(welfare.lastname);
-			$('#birthdate').val(welfare.birthdate);
-			$('#sex').val(welfare.sex);
-			$('#address').val(welfare.address);
-			$('#phone').val(welfare.phone);
-			$('#email').val(welfare.email);
+			$('#lastname').val(patient.lastname);
+			$('#birthdate').val(patient.birthdate);
+			$('#sex').val(patient.sex);
+			$('#address').val(patient.address);
+			$('#phone').val(patient.phone);
+			$('#email').val(patient.email);
 		},
 		error: function(error){
 			CleanPatientForm('editPatient');

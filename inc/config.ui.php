@@ -487,6 +487,37 @@ $page_nav = array(
                                 )
         )
     ), 
+    "pacientes" => array(
+        "title" => "Pacientes",
+        'icon' => 'fa-group',
+        "type" => "800",
+        "sub" => array(
+            "altas" => array(
+                            "title" => "Altas",
+                            "icon" => "fa-user",
+                            "type" => "802",
+                            "id" => "AltaPaciente"
+                            ),
+            "modificacion" => array(
+                                    "title" => "Modificaciones",
+                                    "icon" => "fa-edit",
+                                    "type" => "804",
+                                    "id" => "ModificacionPaciente"
+                                    ),
+            "borrado" => array(
+                                    "title" => "Borrado",
+                                    "icon" => "fa-times",
+                                    "type" => "806",
+                                    "id" => "BorradoPaciente"
+                                    ),
+            "listado" => array(
+                                    "title" => "Listados",
+                                    "icon" => "fa-list",
+                                    "id" => "ListadoPaciente",
+                                    "type" => "808",
+                                )
+        )
+    ),
     "usuarios" => array(
         "title" => "Usuarios",
         "icon" => "fa-group",

@@ -26,7 +26,7 @@ $("#check-nbu").on("change", function(){
   else { $("#form-nbu").fadeOut("slow");}
 });
 
-$('#btn-addnewWelfare').on('click', function(){
+$('#btn-addNewWelfare').on('click', function(){
   setTimeout(function(){ $('#code').focus(); }, 180);
 });
 

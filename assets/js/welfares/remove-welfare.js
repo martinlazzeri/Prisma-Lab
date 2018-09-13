@@ -18,8 +18,19 @@ $("#search-welfare").autocomplete({
 					return {
 						label : welfare.code + " - " + welfare.name,
 						value : welfare.id
-					}
+					};
 				}));
+			},
+			error:function(error){
+				if(error.status == 404){
+					$.bigBox({
+						title : "Error",
+						content : "No existen obras sociales creadas.",
+						color : "#C46A69",
+						timeout: 8000,
+						icon : "fa fa-warning shake animated"
+					});
+				}
 			}
 		});
 	},
@@ -27,6 +38,7 @@ $("#search-welfare").autocomplete({
 	select : function(event, ui) {
 		$('#search-welfare').removeClass('ui-autocomplete-loading');
 		GetWelfareById(ui.item.value);
+		$('#btn-removeWelfare').removeAttr('disabled');
 	}
 });
 

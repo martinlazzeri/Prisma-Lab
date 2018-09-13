@@ -18,8 +18,19 @@ $("#search-user").autocomplete({
 					return {
 						label : user.username + " - " + user.firstname + " "+ user.lastname,
 						value : user.id
-					}
+					};
 				}));
+			},
+			error:function(error){
+				if(error.status == 404){
+					$.bigBox({
+						title : "Error",
+						content : "No existen usuarios creados.",
+						color : "#C46A69",
+						timeout: 8000,
+						icon : "fa fa-warning shake animated"
+					});
+				}
 			}
 		});
 	},

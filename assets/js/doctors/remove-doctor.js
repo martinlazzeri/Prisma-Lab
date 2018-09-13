@@ -18,8 +18,19 @@ $("#search-doctor").autocomplete({
 					return {
 						label : doctor.enrollment + " - " + doctor.firstname +" " + doctor.lastname,
 						value : doctor.id
-					}
+					};
 				}));
+			},
+			error:function(error){
+				if(error.status == 404){
+					$.bigBox({
+						title : "Error",
+						content : "No existen médicos creados.",
+						color : "#C46A69",
+						timeout: 8000,
+						icon : "fa fa-warning shake animated"
+					});
+				}
 			}
 		});
 	},
@@ -27,11 +38,11 @@ $("#search-doctor").autocomplete({
 	select : function(event, ui) {
 		$('#search-doctor').removeClass('ui-autocomplete-loading');
 		GetDoctorById(ui.item.value);
+		$('#btn-removeDoctor').removeAttr('disabled');
 	}
 });
 
 function RemoveDoctor(){
-	var id = $("#datalist-doctors [value='" + $("#search-doctor").val() + "']").data("value");
 
 	$.ajax({
 		type: 'DELETE',
