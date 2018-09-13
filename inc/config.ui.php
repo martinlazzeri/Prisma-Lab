@@ -575,7 +575,6 @@ $page_nav = array(
         )
     )
 );
-//configuration variables
 $page_title = "";
 $page_css = array();
 $no_main_header = false; //set true for lock.php and login.php
